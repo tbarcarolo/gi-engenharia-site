@@ -4398,7 +4398,7 @@ input, select, textarea {
 }
 
 .email-float {
-    background-color: #eb7734;
+    background-color: #1a1a1a;
     bottom: 88px;
 }
 
@@ -4547,7 +4547,7 @@ input, select, textarea {
 
     #banner .content header h2 {
         white-space: normal !important;
-        font-size: 1.8em !important;
+        font-size: 2.2em !important;
         line-height: 1.25em !important;
         margin-bottom: 0.8em !important;
         width: 100%;
@@ -4566,7 +4566,7 @@ input, select, textarea {
         width: 100% !important;
         border: none !important;
         opacity: 0;
-        font-size: 1.05em;
+        font-size: 1.25em;
         margin-bottom: 0.3em !important;
     }
 
@@ -4580,7 +4580,7 @@ input, select, textarea {
     }
 
     #banner .content .image {
-        width: 140px !important;
+        width: 180px !important;
         margin: 0 auto !important;
         display: block;
     }
@@ -4637,19 +4637,18 @@ input, select, textarea {
 
     /* General text size boost for mobile */
     .spotlight .content p,
-    .wrapper p,
-    body {
-        font-size: 1.05em !important;
+    .wrapper p {
+        font-size: 1.15em !important;
     }
 
     .spotlight .content h2,
     .wrapper h2 {
-        font-size: 1.5em !important;
+        font-size: 1.6em !important;
     }
 
     .spotlight .content h3,
     .wrapper h3 {
-        font-size: 1.15em !important;
+        font-size: 1.25em !important;
     }
 
     /* Services grid icons */
@@ -4707,16 +4706,16 @@ input, select, textarea {
     }
 
     #banner .content header h2 {
-        font-size: 1.5em !important;
+        font-size: 1.9em !important;
         line-height: 1.3em !important;
     }
 
     .texto-digitar {
-        font-size: 0.95em;
+        font-size: 1.1em;
     }
 
     #banner .content .image {
-        width: 120px !important;
+        width: 150px !important;
     }
 
     .column-thumb {
