@@ -4143,6 +4143,10 @@ input, select, textarea {
     color: #000000 !important;
 }
 
+.wrapper.style2 h2 {
+    font-weight: 700 !important;
+}
+
 .wrapper.style2 p {
     font-weight: 400 !important;
 }
@@ -4361,151 +4365,41 @@ input, select, textarea {
         margin-bottom: 1.2em !important;
         line-height: 1.5em !important;
     }
-
-    .spotlight .content header {
-        margin-bottom: 0.5em !important;
-    }
 }
 
 /* ==========================================================================
-   FLOATING BUTTONS (WhatsApp + Email)
+   FLOATING CONTACT BUTTONS
    ========================================================================== */
 .botao-flutuante {
     position: fixed;
-    right: 20px;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    color: #FFF !important;
-    text-align: center;
-    font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 26px;
+    color: #fff;
     text-decoration: none;
-    border: none;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    right: 20px;
 }
 
 .botao-flutuante:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .whatsapp-float {
+    background-color: #25D366;
     bottom: 20px;
-    background-color: #25d366;
 }
 
 .email-float {
-    bottom: 86px;
-    background-color: #1a1a1a;
-}
-
-/* ==========================================================================
-   SLIDESHOW / CAROUSEL
-   ========================================================================== */
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin-bottom: 2em;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
-}
-
-.mySlides {
-    display: none;
-}
-
-.mySlides img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 4px;
-    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
-}
-
-/* Slide Arrows */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: #ffffff !important;
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    border: none !important;
-    text-decoration: none !important;
-    outline: none !important;
-    font-weight: bold;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    z-index: 100;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    color: #ffffff !important;
-    border: none !important;
-}
-
-/* Thumbnails */
-.row-thumbs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-    margin-bottom: 0;
-}
-
-.column-thumb {
-    width: 15%;
-    cursor: pointer;
-}
-
-.column-thumb img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    opacity: 0.6;
-    transition: opacity 0.3s ease, border 0.3s ease;
-}
-
-.column-thumb img:hover,
-.column-thumb img.active {
-    opacity: 1;
-    border: 2px solid #eb7734;
-}
-
-/* Fade Animation */
-.fade {
-    animation-name: fadeSlide;
-    animation-duration: 0.6s;
-}
-
-@keyframes fadeSlide {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
-/* Project Page Text Spacing */
-#content .box.alt h3 {
-    margin-top: 2em !important;
-}
-
-#content .box.alt p {
-    margin-top: 1em !important;
+    background-color: #eb7734;
+    bottom: 88px;
 }
 
 /* ==========================================================================
@@ -4547,7 +4441,7 @@ input, select, textarea {
         flex-direction: column !important;
         text-align: center !important;
         padding: 3em 2em !important;
-        max-width: 100%;
+        width: 100% !important;
     }
 
     #banner .content header {
@@ -4653,7 +4547,7 @@ input, select, textarea {
 
     #banner .content header h2 {
         white-space: normal !important;
-        font-size: 1.6em !important;
+        font-size: 1.8em !important;
         line-height: 1.25em !important;
         margin-bottom: 0.8em !important;
         width: 100%;
@@ -4672,7 +4566,7 @@ input, select, textarea {
         width: 100% !important;
         border: none !important;
         opacity: 0;
-        font-size: 0.95em;
+        font-size: 1.05em;
         margin-bottom: 0.3em !important;
     }
 
@@ -4741,6 +4635,23 @@ input, select, textarea {
         margin-top: 10px;
     }
 
+    /* General text size boost for mobile */
+    .spotlight .content p,
+    .wrapper p,
+    body {
+        font-size: 1.05em !important;
+    }
+
+    .spotlight .content h2,
+    .wrapper h2 {
+        font-size: 1.5em !important;
+    }
+
+    .spotlight .content h3,
+    .wrapper h3 {
+        font-size: 1.15em !important;
+    }
+
     /* Services grid icons */
     .wrapper.style1.special .icon.major {
         height: 5em;
@@ -4796,12 +4707,12 @@ input, select, textarea {
     }
 
     #banner .content header h2 {
-        font-size: 1.35em !important;
+        font-size: 1.5em !important;
         line-height: 1.3em !important;
     }
 
     .texto-digitar {
-        font-size: 0.85em;
+        font-size: 0.95em;
     }
 
     #banner .content .image {
