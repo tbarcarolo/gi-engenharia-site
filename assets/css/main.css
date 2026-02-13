@@ -4108,66 +4108,110 @@ input, select, textarea {
 	}
 
 
-	div.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
+/* ==========================================================================
+   CUSTOM STYLES - G.I. Engenharia e Construções
+   Clean, consolidated, fully responsive
+   ========================================================================== */
 
-div.gallery-item {
-  margin: 5px;
-  border: 1px solid #ccc;
-  width: 180px;
-}
-
-div.gallery-item:hover {
-  border: 1px solid #777;
-}
-
-div.gallery-item img {
-  width: 100%;
-  height: auto;
-}
-
-div.gallery-item div.desc {
-  padding: 15px;
-  text-align: center;
-
-}
-
+/* --- SPOTLIGHT #TWO: Remove overlay --- */
 #two.spotlight:before {
     display: none;
 }
 
-/* --- Botão WhatsApp na área Laranja --- */
+/* --- HEADER: Glass Effect (All Pages) --- */
+#header {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: rgba(39, 40, 51, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.1) !important;
+    z-index: 10000;
+}
 
-/* Estado Normal */
+/* --- WHATSAPP BUTTON: Header --- */
+#header .button.whatsapp {
+    background-color: #25D366 !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+}
+
+/* --- CTA Section (style2 wrapper): Black text on orange background --- */
+.wrapper.style2 h2,
+.wrapper.style2 p {
+    color: #000000 !important;
+}
+
+.wrapper.style2 p {
+    font-weight: 400 !important;
+}
+
+/* --- WHATSAPP BUTTON: CTA Section (style2 wrapper) --- */
 .wrapper.style2 .button.whatsapp {
     background-color: #25D366 !important;
     box-shadow: none !important;
-    color: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 1.2em !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
-/* Estado Hover (Passando o mouse) */
 .wrapper.style2 .button.whatsapp:hover {
-    box-shadow: none !important; /* Remove a borda transparente do template */
-    opacity: 1 !important; /* Garante que não fique transparente */
+    box-shadow: none !important;
+    opacity: 1 !important;
+    transform: translateY(-3px) !important;
 }
 
-/* --- Botão WhatsApp no Menu do Topo --- */
-#header .button.whatsapp {
-    background-color: #25D366 !important; /* Verde WhatsApp */
-    box-shadow: none !important; /* Tira bordas estranhas */
-    color: #ffffff !important; /* Texto branco */
+/* --- EMAIL BUTTON: CTA Section --- */
+.wrapper.style2 .button.email {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
 }
 
+.wrapper.style2 .button.email:hover {
+    transform: translateY(-3px) !important;
+    background-color: #000000 !important;
+}
 
-/* --- 1. TÍTULO: SLIDE UP SUAVE --- */
+/* --- HEADER / NAV BUTTONS: Hover Jump Effect --- */
+#header .button,
+#nav .button {
+    display: inline-block !important;
+    transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+#header .button:hover,
+#nav .button:hover {
+    transform: translateY(-3px) !important;
+}
+
+/* --- FOOTER: Icon Hover Effect --- */
+#footer .icons li a {
+    display: inline-block !important;
+    transition: transform 0.2s ease !important;
+}
+
+#footer .icons li a:hover {
+    transform: translateY(-5px) !important;
+}
+
+/* --- SPOTLIGHT: "Ver Mais Projetos" button spacing --- */
+.spotlight .content .actions {
+    margin-top: 1em !important;
+    text-align: left !important;
+}
+
+/* ==========================================================================
+   BANNER: Animations
+   ========================================================================== */
+
+/* Title Slide-Up Animation */
 .titulo-slide {
     opacity: 0;
     transform: translateY(30px);
-    animation: subirSuave 1s ease-out forwards; /* Título sobe em 1 segundo */
-    animation-delay: 0.2s;
+    animation: subirSuave 1s ease-out 0.2s forwards;
 }
 
 @keyframes subirSuave {
@@ -4177,13 +4221,13 @@ div.gallery-item div.desc {
     }
 }
 
-/* --- 2. SUBTÍTULO: DIGITAÇÃO ALINHADA E RECUIADA --- */
-
+/* Typing Container */
 .container-digitacao {
     display: inline-block;
-    text-align: left; /* Mantém alinhado à esquerda para a digitação fluir reta */
+    text-align: left;
 }
 
+/* Typing Effect Base */
 .texto-digitar {
     overflow: hidden;
     white-space: nowrap;
@@ -4193,125 +4237,39 @@ div.gallery-item div.desc {
     border-right: 3px solid transparent;
 }
 
-/* Animação da LINHA 1 */
+/* Line 1 Animation */
 .linha1 {
-    animation: 
-        escrever 1.5s steps(30, end) forwards, 
-        cursor-aparece-some 1.5s step-end forwards; 
-    animation-delay: 1.2s;
+    animation:
+        escrever 1.5s steps(30, end) 1.2s forwards,
+        cursor-aparece-some 1.5s step-end 1.2s forwards;
 }
 
-/* Animação da LINHA 2 (Com recuo MAIOR para alinhar no final) */
+/* Line 2 Animation */
 .linha2 {
-    /* AQUI: Aumentei de 4em para 15% (porcentagem adapta melhor ao tamanho da tela) */
-    padding-left: 21%; 
-    box-sizing: content-box; 
-    
-    animation: 
-        escrever-com-recuo 1.5s steps(30, end) forwards,
-        cursor-aparece-some 1.5s step-end forwards;
-    animation-delay: 2.8s;
+    padding-left: 21%;
+    box-sizing: content-box;
+    animation:
+        escrever-com-recuo 1.5s steps(30, end) 2.8s forwards,
+        cursor-aparece-some 1.5s step-end 2.8s forwards;
 }
-
-/* --- REGRAS (KEYFRAMES) --- */
 
 @keyframes escrever {
     to { width: 100%; }
 }
 
-/* ATENÇÃO: O valor aqui dentro do calc() tem que ser IGUAL ao padding-left ali de cima */
 @keyframes escrever-com-recuo {
-    to { width: calc(100% - 21%); } 
+    to { width: calc(100% - 21%); }
 }
 
 @keyframes cursor-aparece-some {
-    0% { border-color: #eb7734; }   
-    99% { border-color: #eb7734; }  
+    0%   { border-color: #eb7734; }
+    99%  { border-color: #eb7734; }
     100% { border-color: transparent; }
 }
 
-/* --- AJUSTE PARA CELULAR (Animação e Alinhamento) --- */
-@media screen and (max-width: 736px) {
-    .texto-digitar {
-        white-space: normal;
-        width: 100%;
-        opacity: 0;
-        border: none;
-        text-align: center !important; /* Garante centralização */
-    }
-
-    .linha1 { 
-        animation: aparecerSimples 1.5s ease forwards 0.5s; 
-    }
-
-    /* AQUI ESTÁ A CORREÇÃO: Zeramos o padding-left */
-    .linha2 { 
-        padding-left: 0 !important; /* Tira o recuo de 21% do PC */
-        animation: aparecerSimples 1.5s ease forwards 1.5s; 
-    }
-    
-    @keyframes aparecerSimples { to { opacity: 1; } }
-}
-
-
-/* --- CORREÇÃO FINAL DE LAYOUT (DESKTOP E MOBILE) --- */
-
-/* 1. O Banner (a tela toda) centraliza tudo */
-#banner {
-    display: flex !important;
-    align-items: center !important; /* Centraliza Verticalmente */
-    justify-content: center !important; /* Centraliza Horizontalmente */
-    padding: 0 !important;
-    min-height: 100vh; /* Garante que o banner ocupe 100% da altura da tela */
-}
-
-/* Remove o "espaçador fantasma" do template */
-#banner:before {
-    display: none !important;
-}
-
-/* 2. O Conteúdo (Texto + Logo) no DESKTOP */
-#banner .content {
-    display: flex !important;
-    flex-direction: row; /* Lado a lado */
-    align-items: center; 
-    justify-content: center;
-    text-align: right;
-    
-    width: 100%;
-    /* AUMENTEI AQUI: De 1400px para 1600px para o texto caber em uma linha */
-    max-width: 1600px; 
-    padding: 0 5% !important;
-    margin: 0 !important;
-}
-
-/* Ajustes do Texto no Desktop */
-#banner .content header {
-    flex: 1;
-    margin-right: 40px; /* Espaço entre texto e logo */
-    display: block !important;
-}
-
-/* Garante que o título H2 não quebre linha fácil no desktop */
-#banner .content header h2 {
-    white-space: nowrap; /* Força ficar em uma linha só */
-}
-
-/* Ajustes do Logo no Desktop */
-#banner .content .image {
-    flex-shrink: 0;
-    margin: 0 !important;
-    width: 350px; /* Tamanho fixo do logo no desktop */
-    height: auto;
-}
-#banner .content .image img {
-    width: 100%;
-}
-
-
-/* --- CORREÇÃO FINAL DE LAYOUT (DESKTOP E MOBILE) - V3 --- */
-
-/* 1. O Banner (a tela toda) centraliza tudo */
+/* ==========================================================================
+   BANNER: Layout (Desktop)
+   ========================================================================== */
 #banner {
     display: flex !important;
     align-items: center !important;
@@ -4320,75 +4278,292 @@ div.gallery-item div.desc {
     min-height: 100vh;
 }
 
-#banner:before { display: none !important; }
+#banner:before {
+    display: none !important;
+}
 
-/* 2. O Conteúdo no DESKTOP */
 #banner .content {
     display: flex !important;
-    flex-direction: row; /* Lado a lado */
-    align-items: center; 
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     text-align: right;
     width: 100%;
-    max-width: 1600px; 
+    max-width: 1600px;
     padding: 0 5% !important;
     margin: 0 !important;
+    gap: 30px;
 }
 
 #banner .content header {
     flex: 1;
-    margin-right: 40px;
+    margin-right: 0;
     display: block !important;
+    min-width: 0;
+    overflow: hidden;
 }
 
 #banner .content header h2 {
-    white-space: nowrap; 
+    white-space: normal;
 }
 
-/* --- MUDANÇA 1: LOGO MENOR NO DESKTOP --- */
 #banner .content .image {
     flex-shrink: 0;
     margin: 0 !important;
-    width: 280px; /* Diminuí de 350px para 280px */
+    width: 250px;
     height: auto;
 }
-#banner .content .image img { width: 100%; }
 
+#banner .content .image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 60px rgba(0, 0, 0, 0.25);
+}
 
-/* --- REGRAS EXCLUSIVAS PARA CELULAR (Telas até 736px) --- */
-@media screen and (max-width: 736px) {
-    
-    /* 1. Layout Geral */
+/* ==========================================================================
+   SPOTLIGHT: Desktop Scrollbar & Layout
+   ========================================================================== */
+.spotlight .content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.spotlight .content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.spotlight .content::-webkit-scrollbar-thumb {
+    background-color: #eb7734;
+    border-radius: 6px;
+    border: 2px solid #272833;
+}
+
+@media screen and (min-width: 981px) {
+    .spotlight.left .content,
+    .spotlight.right .content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        height: 100vh !important;
+        overflow-y: auto !important;
+        padding-right: 10px !important;
+    }
+}
+
+@media screen and (min-width: 981px) and (max-height: 850px) {
+    .spotlight.left .content,
+    .spotlight.right .content {
+        justify-content: flex-start !important;
+        padding-top: 3.5em !important;
+        padding-bottom: 2em !important;
+    }
+
+    .spotlight .content p {
+        margin-bottom: 1.2em !important;
+        line-height: 1.5em !important;
+    }
+
+    .spotlight .content header {
+        margin-bottom: 0.5em !important;
+    }
+}
+
+/* ==========================================================================
+   FLOATING BUTTONS (WhatsApp + Email)
+   ========================================================================== */
+.botao-flutuante {
+    position: fixed;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    color: #FFF !important;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botao-flutuante:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.whatsapp-float {
+    bottom: 20px;
+    background-color: #25d366;
+}
+
+.email-float {
+    bottom: 86px;
+    background-color: #1a1a1a;
+}
+
+/* ==========================================================================
+   SLIDESHOW / CAROUSEL
+   ========================================================================== */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 2em;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Slide Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: none !important;
+    text-decoration: none !important;
+    outline: none !important;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 100;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Thumbnails */
+.row-thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.column-thumb {
+    width: 15%;
+    cursor: pointer;
+}
+
+.column-thumb img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, border 0.3s ease;
+}
+
+.column-thumb img:hover,
+.column-thumb img.active {
+    opacity: 1;
+    border: 2px solid #eb7734;
+}
+
+/* Fade Animation */
+.fade {
+    animation-name: fadeSlide;
+    animation-duration: 0.6s;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Project Page Text Spacing */
+#content .box.alt h3 {
+    margin-top: 2em !important;
+}
+
+#content .box.alt p {
+    margin-top: 1em !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE: XLarge (<=1680px)
+   ========================================================================== */
+@media screen and (max-width: 1680px) {
+    #banner .content {
+        max-width: 1400px;
+    }
+    #banner .content .image {
+        width: 220px;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: Large (<=1280px)
+   ========================================================================== */
+@media screen and (max-width: 1280px) {
+    #banner .content {
+        max-width: 1000px;
+    }
+    #banner .content header h2 {
+        font-size: 2em;
+        white-space: normal;
+    }
+    #banner .content .image {
+        width: 200px;
+    }
+    #banner .content header {
+        margin-right: 20px;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: Medium / Tablet (<=980px)
+   ========================================================================== */
+@media screen and (max-width: 980px) {
     #banner .content {
         flex-direction: column !important;
         text-align: center !important;
-        padding: 2em 1em !important; 
-        width: 100% !important;
+        padding: 3em 2em !important;
+        max-width: 100%;
     }
-    
+
     #banner .content header {
-        margin: 0 !important;
+        margin: 0 0 1.5em 0 !important;
         width: 100% !important;
         display: flex !important;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 2em !important;
     }
 
-    /* 2. Título H2 (AJUSTE DE ESPAÇAMENTO AQUI) */
     #banner .content header h2 {
         white-space: normal !important;
-        font-size: 1.75em !important; 
-        line-height: 1.2em !important;
-        margin-top: 0; 
-        
-        /* AQUI: Aumentei a margem de baixo para afastar das frases pequenas */
-        margin-bottom: 1em !important; 
-        
-        width: 100%;
+        font-size: 2em !important;
+        line-height: 1.3em !important;
     }
-    
-    /* 3. Subtítulos (AJUSTE DE ESPAÇAMENTO AQUI) */
+
     .container-digitacao {
         display: block !important;
         text-align: center !important;
@@ -4401,570 +4576,254 @@ div.gallery-item div.desc {
         text-align: center !important;
         width: 100% !important;
         border: none !important;
-        opacity: 1 !important;
-        font-size: 1em;
-        
-        /* AQUI: Diminuí a margem entre as frases para ficarem mais juntas */
-        margin-bottom: 0.2em !important; 
+        opacity: 0;
+        font-size: 1.1em;
     }
 
-    /* 4. Logo */
+    .linha1 {
+        animation: aparecerSimples 1.5s ease 0.5s forwards;
+    }
+
+    .linha2 {
+        padding-left: 0 !important;
+        animation: aparecerSimples 1.5s ease 1.5s forwards;
+    }
+
     #banner .content .image {
-        width: 160px !important;
+        width: 180px !important;
         margin: 0 auto !important;
         display: block;
     }
+
+    /* Spotlight adjustments for tablet */
+    .spotlight .content .actions {
+        text-align: center !important;
+    }
+
+    /* CTA buttons stack on tablet */
+    .wrapper.style2 .actions.special {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper.style2 .actions.special li {
+        padding: 0.5em 0;
+    }
+
+    /* Slideshow arrows bigger tap target */
+    .prev, .next {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    /* Thumbnails bigger on tablet */
+    .column-thumb {
+        width: 20%;
+    }
 }
 
-/* --- CORREÇÃO FINAL: ALINHAMENTO + BARRA DE ROLAGEM COM SETAS --- */
-
-
-
-/* 1. ESTILO DA BARRA DE ROLAGEM (Laranja, Visível e com Setas) */
-
-
-
-/* Largura da barra */
-
-.spotlight .content::-webkit-scrollbar {
-
-    width: 12px; /* Um pouco mais larga para caber a seta */
-
+@keyframes aparecerSimples {
+    to { opacity: 1; }
 }
 
+/* ==========================================================================
+   RESPONSIVE: Small / Mobile (<=736px)
+   ========================================================================== */
+@media screen and (max-width: 736px) {
 
+    /* Banner */
+    #banner {
+        min-height: calc(100vh - 44px);
+    }
 
-/* O fundo por onde a barra corre */
-
-.spotlight .content::-webkit-scrollbar-track {
-
-    background: rgba(0, 0, 0, 0.2);
-
-}
-
-
-
-/* A parte que corre (o scroll) */
-
-.spotlight .content::-webkit-scrollbar-thumb {
-
-    background-color: #eb7734;
-
-    border-radius: 6px;
-
-    border: 2px solid #272833;
-
-}
-
-
-
-/* --- AQUI ESTÃO AS SETINHAS (BOTÕES) --- */
-
-.spotlight .content::-webkit-scrollbar-button {
-
-    display: block;
-
-    background-color: #eb7734; /* Cor Laranja */
-
-    height: 12px; /* Altura do botão */
-
-    width: 12px;  /* Largura do botão */
-
-}
-
-
-
-/* Arredonda levemente a setinha de CIMA */
-
-.spotlight .content::-webkit-scrollbar-button:vertical:decrement {
-
-    border-bottom-left-radius: 4px;
-
-    border-bottom-right-radius: 4px;
-
-}
-
-
-
-/* Arredonda levemente a setinha de BAIXO */
-
-.spotlight .content::-webkit-scrollbar-button:vertical:increment {
-
-    border-top-left-radius: 4px;
-
-    border-top-right-radius: 4px;
-
-}
-
-
-
-
-
-/* 2. REGRA GERAL (Telas Altas/Desktop): Centraliza Perfeito */
-
-@media screen and (min-width: 981px) {
-
-    .spotlight.left .content,
-
-    .spotlight.right .content {
-
-        display: flex !important;
-
+    #banner .content {
         flex-direction: column !important;
-
-        height: 110vh !important;
-		
-
-       
-
-        /* Centraliza no meio exato (seu alinhamento preferido) */
-
-        justify-content: center !important;
-
-        padding-top: 0 !important;
-		
-
-       
-
-        /* ATIVA A ROLAGEM */
-
-        overflow-y: auto !important;
-
-       
-
-        /* Espaço para o texto não colar na barra */
-
-        padding-right: 10px !important;
-
+        text-align: center !important;
+        padding: 2em 1.25em !important;
+        width: 100% !important;
     }
 
-}
-
-
-
-/* 3. EXCEÇÃO (Notebooks/Telas Baixas): Alinha no Topo + Rolagem */
-
-@media screen and (min-width: 981px) and (max-height: 850px) {
-
-    .spotlight.left .content,
-
-    .spotlight.right .content {
-
-        /* Alinha no topo */
-
-        justify-content: flex-start !important;
-
-       
-
-        /* Empurra o conteúdo um pouco para baixo */
-
-        padding-top: 3.5em !important;
-
-        padding-bottom: 2em !important;
-
-       
-
-        /* ATIVA A ROLAGEM */
-
-        overflow-y: auto !important;
-
+    #banner .content header {
+        margin: 0 0 1.5em 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
     }
 
-
-
-    /* Ajuste fino de texto para notebook */
-
-    .spotlight .content p {
-
-        margin-bottom: 1.2em !important;
-
-        line-height: 1.5em !important;
-
+    #banner .content header h2 {
+        white-space: normal !important;
+        font-size: 1.6em !important;
+        line-height: 1.25em !important;
+        margin-bottom: 0.8em !important;
+        width: 100%;
     }
 
-   
-
-    .spotlight .content header {
-
-        margin-bottom: 0.5em !important;
-
+    .container-digitacao {
+        display: block !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
-}
+    .texto-digitar {
+        white-space: normal !important;
+        text-align: center !important;
+        width: 100% !important;
+        border: none !important;
+        opacity: 0;
+        font-size: 0.95em;
+        margin-bottom: 0.3em !important;
+    }
 
-/* --- Estilo do Botão de Email --- */
+    .linha1 {
+        animation: aparecerSimples 1.5s ease 0.5s forwards;
+    }
 
-/* Cor Normal (Cinza Escuro do Rodapé) */
-.wrapper.style2 .button.email {
-    background-color: #000000 !important; 
-    color: #ffffff !important; /* Texto branco */
-    box-shadow: none !important; /* Remove bordas extras */
-}
+    .linha2 {
+        padding-left: 0 !important;
+        animation: aparecerSimples 1.5s ease 1.5s forwards;
+    }
 
-/* Cor quando passa o mouse (Fica quase preto) */
-.wrapper.style2 .button.email:hover { 
-    transform: translateY(-3px); /* Efeito de "pulo" suave */
-}
+    #banner .content .image {
+        width: 140px !important;
+        margin: 0 auto !important;
+        display: block;
+    }
 
-/* --- ANIMAÇÃO DE "PULO" PARA WHATSAPP E EMAIL --- */
-
-/* 1. Prepara a animação suave para os dois botões */
-.wrapper.style2 .button.whatsapp,
-.wrapper.style2 .button.email {
-    transition: transform 0.2s ease, background-color 0.2s ease !important;
-}
-
-/* 2. Faz o WHATSAPP subir quando passa o mouse */
-.wrapper.style2 .button.whatsapp:hover {
-    transform: translateY(-3px) !important; /* Sobe 3 pixels */
-}
-
-/* 3. Faz o EMAIL subir quando passa o mouse */
-/* (Caso você já tenha esse, este aqui garante que fique igualzinho ao do Whats) */
-.wrapper.style2 .button.email:hover {
-    transform: translateY(-3px) !important; /* Sobe 3 pixels */
-    background-color: #000000 !important; /* Preto */
-}
-
-/* --- AJUSTE FINO: Diminuir tamanho do Botão WhatsApp --- */
-.wrapper.style2 .button.whatsapp {
-    /* Reduzimos o espaço nas laterais (o padrão era maior) */
-    padding-left: 1.6em !important;
-    padding-right: 1.5em !important;
-    
-    /* Opcional: Se ainda achar grande, tire o "/*" da linha abaixo para diminuir a letra */
-    /* font-size: 0.9em !important; */
-}
-
-/* --- BOTÕES FLUTUANTES (WhatsApp + Email) --- */
-
-/* 1. Estilo Básico Compartilhado (Forma e Sombra) */
-.botao-flutuante {
-    position: fixed;
-    right: 20px; /* Distância da direita */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Redondo */
-    color: #FFF !important;
-    text-align: center;
-    font-size: 30px; /* Tamanho do ícone */
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-/* Efeito de hover (Mouse em cima) para ambos */
-.botao-flutuante:hover {
-    transform: scale(1.1); /* Cresce um pouco */
-}
-
-/* --- 2. Cores e Posições Específicas --- */
-
-/* WHATSAPP (Fica embaixo) */
-.whatsapp-float {
-    bottom: 20px; /* Cola no rodapé */
-    background-color: #25d366;
-
-}
-
-/* EMAIL (Fica em cima do WhatsApp) */
-.email-float {
-    bottom: 90px; /* 20px (base) + 60px (botão whats) + 10px (espaço) */
-    background-color: #000000;
-}
-
-
-/* --- 3. Ajuste para Celular (Botões menores e mais pertos) --- */
-@media screen and (max-width: 736px) {
+    /* Floating Buttons */
     .botao-flutuante {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        right: 15px;
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        right: 12px;
     }
 
-    /* Recalcula as posições para o tamanho mobile */
     .whatsapp-float {
-        bottom: 15px;
+        bottom: 12px;
     }
-    
+
     .email-float {
-        bottom: 75px; /* 15px + 50px + 10px de espaço */
+        bottom: 70px;
     }
-}
 
-/* --- AJUSTE BOTÃO CONTATO (CABEÇALHO) --- */
-
-/* 1. Prepara a animação suave para o botão do menu */
-#header .button,
-#nav .button {
-    /* Garante que o botão aceite o movimento */
-    display: inline-block !important; 
-    
-    /* Define a velocidade e suavidade da animação */
-    transition: transform 0.2s ease, background-color 0.2s ease !important;
-}
-
-/* 2. Faz o botão subir (Pular) quando o mouse passa */
-#header .button:hover,
-#nav .button:hover {
-    transform: translateY(-3px) !important; /* Sobe 3 pixels */
-}
-
-/* --- AJUSTE: Empurrar o botão "Ver Mais Projetos" para baixo --- */
-.spotlight .content .actions {
-    margin-top: 1em !important; 
-    
-    /* Garante que ele continue alinhado à esquerda */
-    text-align: left !important;
-}
-
-/* --- EFEITO DE "PULO" NOS ÍCONES DO RODAPÉ --- */
-
-/* 1. Prepara a animação suave para os ícones dentro do rodapé */
-#footer .icons li a {
-    /* Garante que o ícone aceite o movimento */
-    display: inline-block !important; 
-
-    /* Define a velocidade e suavidade da animação */
-    transition: transform 0.2s ease !important;
-    
-    /* Opcional: Se você quiser que eles mudem de cor ao passar o mouse (ex: para laranja), 
-       descomente a linha abaixo para suavizar a troca de cor também */
-    /* transition: transform 0.2s ease, color 0.2s ease !important; */
-}
-
-/* 2. Faz o ícone subir (Pular) quando o mouse passa */
-#footer .icons li a:hover {
-    /* Sobe 5 pixels (um pouco mais evidente para ícones pequenos) */
-    transform: translateY(-5px) !important; 
-    
-}
-
-/* --- CORREÇÃO DEFINITIVA RODAPÉ (CELULAR) --- */
-@media screen and (max-width: 736px) {
-    
-    /* 1. Arruma o container geral da lista */
+    /* Footer */
     #footer .copyright {
         display: block !important;
-        height: auto !important; /* Importante: Deixa crescer se precisar */
+        height: auto !important;
         padding: 0 !important;
     }
 
-    /* 2. Arruma cada frase individualmente */
     #footer .copyright li {
-        display: block !important;     /* Transforma em bloco (um por linha) */
-        height: auto !important;       /* Altura automática para não cortar texto */
-        line-height: 1.5em !important; /* Altura da linha saudável para leitura */
-        
-        /* Espaço generoso entre as frases para não grudar */
-        margin-top: 20px !important;   
-        margin-bottom: 20px !important;
-        margin-left: 0 !important;     /* Zera margens laterais antigas */
-        
-        /* Remove as bordas/barrinhas do desktop */
+        display: block !important;
+        height: auto !important;
+        line-height: 1.5em !important;
+        margin: 15px 0 !important;
+        margin-left: 0 !important;
         border: none !important;
         padding: 0 !important;
-        
-        /* Centraliza tudo bonitinho */
         text-align: center !important;
         width: 100% !important;
     }
+
+    /* Slideshow */
+    .prev, .next {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .column-thumb {
+        width: 25%;
+    }
+
+    .row-thumbs {
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    /* Services grid icons */
+    .wrapper.style1.special .icon.major {
+        height: 5em;
+        width: 5em;
+        line-height: 4.65em;
+    }
+
+    .wrapper.style1.special .icon.major:before {
+        font-size: 1.75em;
+    }
+
+    /* CTA Section */
+    #five .actions.special {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #five .actions.special li {
+        padding: 0.4em 0 !important;
+        width: 100%;
+    }
+
+    #five .actions.special .button {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Projects page content */
+    #main.wrapper {
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+
+    #content .box.alt h3 {
+        margin-top: 1.5em !important;
+        font-size: 1.15em;
+    }
+
+    #content .box.alt p {
+        font-size: 0.95em;
+        line-height: 1.6em;
+    }
 }
 
-/* --- CARROSSEL DE FOTOS (SLIDESHOW) --- */
+/* ==========================================================================
+   RESPONSIVE: XSmall (<=480px)
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+    #banner .content {
+        padding: 1.5em 1em !important;
+    }
 
-/* O Container Principal */
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: 0 0 2em 0; /* Espaço em baixo igual ao das outras imagens */
-    border-radius: 4px;
-    overflow: hidden; /* Garante que nada saia da caixa */
-    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25); /* Sombra igual ao tema */
-}
+    #banner .content header h2 {
+        font-size: 1.35em !important;
+        line-height: 1.3em !important;
+    }
 
-/* As Imagens (Slides) */
-.mySlides {
-    display: none; /* Esconde todas por padrão */
-}
+    .texto-digitar {
+        font-size: 0.85em;
+    }
 
-.mySlides img {
-    vertical-align: middle;
-    width: 100%; /* Ocupa a largura toda */
-    height: auto;
-    border-radius: 4px;
-}
+    #banner .content .image {
+        width: 120px !important;
+    }
 
-/* --- CORREÇÃO DEFINITIVA: SETAS DO SLIDE --- */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    
-    /* 1. FORÇA A SETA A SER BRANCA (Ignora o laranja do tema) */
-    color: #ffffff !important; 
-    
-    /* 2. FUNDO NORMAL (Preto bem clarinho/transparente) */
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    
-    /* 3. REMOVE AS BORDAS DO TEMA */
-    border: none !important;
-    text-decoration: none !important;
-    outline: none !important;
-    
-    /* Garante visibilidade */
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    z-index: 100; /* Garante que fique na frente da foto */
-}
+    .column-thumb {
+        width: 28%;
+    }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
+    /* Stack CTA buttons full width */
+    #five .actions.special .button {
+        max-width: 100%;
+        font-size: 0.9em;
+    }
 
-/* --- EFEITO MOUSE EM CIMA (HOVER) --- */
-.prev:hover, .next:hover {
-    /* Fundo fica um Preto Mais Escuro (Mas ainda transparente/suave) */
-    background-color: rgba(0, 0, 0, 0.6) !important;
-    
-    /* Garante que a seta continue BRANCA e não fique laranja */
-    color: #ffffff !important; 
-    border: none !important;
-}
+    /* Projects page header */
+    #main .major h2 {
+        font-size: 1.4em;
+    }
 
-/* Posiciona o botão "Próximo" na direita */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* Efeito ao passar o mouse nos botões */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.5); /* Laranja da sua marca */
-}
-
-/* Efeito de Fade (Troca suave) */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: 0.4} 
-    to {opacity: 1}
-}
-
-/* --- CARROSSEL COM MINIATURAS --- */
-
-/* Container Principal */
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin-bottom: 2em;
-}
-
-/* Esconde as fotos grandes por padrão */
-.mySlides {
-    display: none;
-}
-
-/* Estilo da Imagem Grande */
-.mySlides img {
-    width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
-}
-
-/* --- ÁREA DAS MINIATURAS (Ficam em cima) --- */
-.row-thumbs {
-    display: flex;
-    justify-content: center; /* Centraliza as miniaturas */
-    gap: 10px; /* Espaço entre elas */
-	margin-top: 15px; 
-    margin-bottom: 0;
-}
-
-/* Cada Miniatura */
-.column-thumb {
-    width: 15%; /* Tamanho da miniatura (ajuste se quiser maior) */
-    cursor: pointer;
-}
-
-.column-thumb img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    opacity: 0.6; /* Deixa meio apagadinha quando não selecionada */
-    transition: 0.3s;
-}
-
-/* Efeito quando passa o mouse ou está selecionada */
-.column-thumb img:hover,
-.column-thumb img.active {
-    opacity: 1; /* Fica 100% visível */
-    border: 2px solid #eb7734; /* Borda laranja para destacar */
-}
-
-/* Animação suave */
-.fade {
-    animation-name: fade;
-    animation-duration: 0.5s;
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-/* --- AJUSTE DE ESPAÇAMENTO: Texto do Projeto --- */
-#content .box.alt h3 {
-    margin-top: 2em !important; /* Empurra o título para baixo */
-}
-
-/* Se quiser afastar o parágrafo também */
-#content .box.alt p {
-    margin-top: 1em !important;
-}
-
-/* --- MENU SUPERIOR (CABEÇALHO) - EFEITO VIDRO EM TODAS AS PÁGINAS --- */
-#header {
-    /* Garante que fique fixo no topo sempre */
-    position: fixed !important;
-    top: 0 !important;
-    width: 100% !important;
-
-    /* A cor Cinza com Transparência (0.75) */
-    /* Se quiser mais claro, mude o 0.75 para 0.5 */
-    background: rgba(39, 40, 51, 0.3) !important; 
-
-    /* Efeito de vidro embaçado (Blur) */
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important; /* Para funcionar no iPhone/Safari */
-
-    /* Sombra suave */
-    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.1) !important;
-    
-    z-index: 10000;
-}
-
-/* --- DIMINUIR O RETÂNGULO DO WHATSAPP (Mantendo a letra legível) --- */
-.wrapper.style2 .button.whatsapp {
-
-
-    padding: 0 1.0em !important;   /* Reduz a largura (laterais) */
-    
-
+    #main .major p {
+        font-size: 0.9em;
+    }
 }
